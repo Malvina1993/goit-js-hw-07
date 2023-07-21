@@ -16,9 +16,19 @@ function onImageClick(evn) {
     };
     evn.preventDefault();
     const instance = basicLightbox.create(`<img src="${evn.target.dataset.source}" width="800" height="600">`);
-    
+
     instance.show(); 
+
+    window.addEventListener('keydown', onClosrModalPressEsc);
     
+    
+    function onClosrModalPressEsc(evn) {
+        if (evn.code === 'Escape') {
+            instance.close();
+            window.removeEventListener('keydown', onClosrModalPressEsc);
+            
+        };
+    };
 };
 
 function galleryToList(gallery) {
@@ -33,4 +43,6 @@ function galleryToList(gallery) {
         .join("");
  
 }
+
+
 
