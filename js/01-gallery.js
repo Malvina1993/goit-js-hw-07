@@ -21,12 +21,10 @@ function onImageClick(evn) {
 
     window.addEventListener('keydown', onClosrModalPressEsc);
     
-    
     function onClosrModalPressEsc(evn) {
         if (evn.code === 'Escape') {
             instance.close();
             window.removeEventListener('keydown', onClosrModalPressEsc);
-            
         };
     };
 };
